@@ -88,11 +88,39 @@ function locoInitialize() {
     smooth: true,
   });
 }
+
+function showCard() {
+  document.querySelectorAll(".cnt").forEach(function (cnt) {
+    var showingImage;
+    cnt.addEventListener("mousemove", function (e) {
+      document.querySelector("#cursor").children[
+        e.target.dataset.index
+      ].style.opacity = 1;
+      showingImage = e.target;
+      document.querySelector("#cursor").children[
+        e.target.dataset.index
+      ].style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
+      showingImage.style.filter = "grayscale(1)";
+      document.querySelector("#work").style.backgroundColor =
+        showingImage.dataset.color;
+    });
+
+    cnt.addEventListener("mouseleave", function (e) {
+      document.querySelector("#cursor").children[
+        showingImage.dataset.index
+      ].style.opacity = 0;
+      showingImage.style.filter = "grayscale(0)";
+      document.querySelector("#work").style.backgroundColor =
+        showingImage.dataset.color;
+    });
+  });
+}
 revealToSpan();
 valueSetters();
 loaderAnimation();
 locoInitialize();
 animateSvg();
+showCard();
 
 // <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 // viewBox="0 35 870 305"><defs><clipPath id="clip-path" transform="translate(31.09 32.56)">
