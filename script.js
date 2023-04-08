@@ -91,12 +91,14 @@ function locoInitialize() {
 
 function showCard() {
   document.querySelectorAll(".cnt").forEach(function (cnt) {
+    // console.log(cnt);
     var showingImage;
     cnt.addEventListener("mousemove", function (e) {
       document.querySelector("#cursor").children[
         e.target.dataset.index
       ].style.opacity = 1;
       showingImage = e.target;
+      // console.log(showingImage);
       document.querySelector("#cursor").children[
         e.target.dataset.index
       ].style.transform = `translate(${e.clientX}px,${e.clientY}px)`;
@@ -113,13 +115,17 @@ function showCard() {
       document.querySelector("#work").style.backgroundColor =
         showingImage.dataset.color;
     });
+    cnt.addEventListener("click", function (e) {
+      console.log(window.location);
+      window.location.href = e.target.dataset.url;
+    });
   });
 }
 revealToSpan();
 valueSetters();
 loaderAnimation();
-locoInitialize();
 animateSvg();
+locoInitialize();
 showCard();
 
 // <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
