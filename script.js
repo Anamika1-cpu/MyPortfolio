@@ -121,6 +121,11 @@ function showCard() {
     });
   });
 }
+function cvDownload() {
+  document.querySelector("#cv").addEventListener("click", function (e) {
+    console.log("clicked");
+  });
+}
 revealToSpan();
 valueSetters();
 loaderAnimation();
