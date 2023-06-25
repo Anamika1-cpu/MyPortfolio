@@ -350,9 +350,10 @@ html,body{
     width: 40%;
 }
 #cursor{
-    position: fixed;
+    position:absolute;
     width: 22vw;
-    top: 50%;
+    /* transform: translate(-50%, -50%); */
+    top:2%;
     left:0;
     z-index: 9999999;
 }
