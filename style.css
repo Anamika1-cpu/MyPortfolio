@@ -716,7 +716,7 @@ button:hover::before{
 }
 #mwork{
     min-height:40vh;
-    margin-top: 46vw;
+    margin-top: 76vw;
 }
 #hire{
     flex-direction: column;
@@ -741,12 +741,16 @@ button:hover::before{
 #imagery #imgrig{
     display: block;
     margin-top: 15vw;
-    margin-left: 30vw;
+    margin-left: 20vw;
 }
 #imgleft h1{
     font-size: 4.4vw;
     width:140%;
     margin-left: -23px;
+}
+#imgrig .imgcntr{
+    width: 50vw;
+    height: 74vw;
 }
 .ele h2{
     font-size: 3.5vw;
@@ -767,5 +771,8 @@ button:hover::before{
 }
 .row h1{
     font-size: 13vw;
+}
+#c-web svg {
+    width: calc(-17.85714vw + 371.14286px);
 }
 }
